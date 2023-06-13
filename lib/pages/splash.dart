@@ -12,10 +12,17 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final style = theme.textTheme.displayMedium!.copyWith(
+      color: theme.colorScheme.onPrimary,
+    );
+
     return Scaffold(
+      backgroundColor: Colors.grey[100],
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
           children: [
             const Text(
               'e-Soko',
@@ -31,10 +38,11 @@ class _SplashPageState extends State<SplashPage> {
                 .then()
                 .shake(delay: 250.ms, duration: 250.ms)
                 .tint(color: Colors.black),
-            Lottie.network(
-              'https://assets5.lottiefiles.com/packages/lf20_K0864uP6eC.json',
+            Lottie.asset(
+              'assets/groceries.json',
               width: 125,
               height: 125,
+              fit: BoxFit.fill,
               repeat: false,
               // onLoaded: (composition) {
               //   // When the animation is loaded, navigate to the next page.
@@ -47,7 +55,8 @@ class _SplashPageState extends State<SplashPage> {
             const Text('Shopping made easier.')
                 .animate()
                 .fade(begin: .1, end: .8, duration: 2000.ms)
-                .slide()
+                .slide(),
+            const SizedBox(height: 30),
           ],
         ),
       ),

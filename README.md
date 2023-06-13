@@ -57,3 +57,4 @@ Page switch on animation load
         );
     },
 N/B: Moving to fast animation doesn't complete load up
+
