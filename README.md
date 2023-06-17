@@ -58,3 +58,5 @@ Page switch on animation load
     },
 N/B: Moving to fast animation doesn't complete load up
 
+Used a the animation as a button by setting an onclick function
+To be reviewed later
